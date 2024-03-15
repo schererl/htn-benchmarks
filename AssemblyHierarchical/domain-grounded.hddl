@@ -1,0 +1,446 @@
+(define (domain rc)
+  (:predicates (misOccupied_cableWithPlugType1ma_)
+               (misOccupied_cableWithPlugType1mb_)
+               (misOccupied_pcmbPlugType1_)
+               (misOccupied_printermaPlugType1_)
+               (mpGuard__)
+               (ppGuard__)
+               (pisConnected_cableWithPlugType1ma_pcmbPlugType1_)
+               (pisConnected_cableWithPlugType1ma_printermaPlugType1_)
+               (pisConnected_cableWithPlugType1mb_pcmbPlugType1_)
+               (pisConnected_cableWithPlugType1mb_printermaPlugType1_)
+               (pisConnected_pcmbPlugType1_cableWithPlugType1ma_)
+               (pisConnected_pcmbPlugType1_cableWithPlugType1mb_)
+               (pisConnected_printermaPlugType1_cableWithPlugType1ma_)
+               (pisConnected_printermaPlugType1_cableWithPlugType1mb_)
+               (ppAim__)
+  )
+
+  (:task x__top__ :parameters ())
+  (:task ConnectDevices_pc_printer_data_ :parameters ())
+  (:task ValidatePortConnection_pcmbPlugType1_printermaPlugType1_data_ :parameters ())
+
+  (:method x__top_method_0
+     :parameters ()
+     :task (x__top__)
+     :ordered-subtasks (and
+        (ConnectDevices_pc_printer_data_)
+     )
+  )
+  (:method x_m3_ValidateDeviceConnection_pc_printer_data__vDC_to_vPC_1_1_0_m1__1
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (guard__))
+        (task1 (ValidatePortConnection_pcmbPlugType1_printermaPlugType1_data_))
+     )
+  )
+  (:method x_vPC_to_vPC_ValidatePortConnection_cableWithPlugType1mb_printermaPlugType1_data__finish_1_0_m1_m2__2
+     :parameters ()
+     :task (ValidatePortConnection_pcmbPlugType1_printermaPlugType1_data_)
+     :ordered-subtasks (and
+        (x__method_precondition_vPC_to_vPC_data_pcmbPlugType1_cableWithPlugType1ma_cableWithPlugType1mb_)
+        (x__method_precondition_finish_cableWithPlugType1mb_printermaPlugType1_)
+        (ok__)
+     )
+  )
+  (:method x_vPC_to_vPC_ValidatePortConnection_cableWithPlugType1ma_printermaPlugType1_data__finish_1_0_m1_m2__3
+     :parameters ()
+     :task (ValidatePortConnection_pcmbPlugType1_printermaPlugType1_data_)
+     :ordered-subtasks (and
+        (x__method_precondition_vPC_to_vPC_data_pcmbPlugType1_cableWithPlugType1mb_cableWithPlugType1ma_)
+        (x__method_precondition_finish_cableWithPlugType1ma_printermaPlugType1_)
+        (ok__)
+     )
+  )
+  (:method x_m1_connect_cableWithPlugType1ma_pcmbPlugType1__c3_0_m1_1__4
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (connect_3_cableWithPlugType1ma_pcmbPlugType1_plugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method x_m1_connect_cableWithPlugType1ma_printermaPlugType1__c3_0_m1_1__5
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (connect_3_cableWithPlugType1ma_printermaPlugType1_plugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method x_m1_connect_cableWithPlugType1mb_pcmbPlugType1__c3_0_m1_1__6
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (connect_3_cableWithPlugType1mb_pcmbPlugType1_plugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method x_m1_connect_cableWithPlugType1mb_printermaPlugType1__c3_0_m1_1__7
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (connect_3_cableWithPlugType1mb_printermaPlugType1_plugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method x_m1_connect_pcmbPlugType1_cableWithPlugType1ma__c8_0_m1_1__8
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (connect_8_pcmbPlugType1_cableWithPlugType1ma_plugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method x_m1_connect_pcmbPlugType1_cableWithPlugType1mb__c8_0_m1_1__9
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (connect_8_pcmbPlugType1_cableWithPlugType1mb_plugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method x_m1_connect_printermaPlugType1_cableWithPlugType1ma__c8_0_m1_1__10
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (connect_8_printermaPlugType1_cableWithPlugType1ma_plugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method x_m1_connect_printermaPlugType1_cableWithPlugType1mb__c8_0_m1_1__11
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (connect_8_printermaPlugType1_cableWithPlugType1mb_plugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method m2_12
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (disconnect_pcmbPlugType1_cableWithPlugType1ma_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method m2_13
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (disconnect_cableWithPlugType1mb_printermaPlugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method m2_14
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (disconnect_pcmbPlugType1_cableWithPlugType1mb_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method m2_15
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (disconnect_cableWithPlugType1mb_pcmbPlugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method m2_16
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (disconnect_printermaPlugType1_cableWithPlugType1ma_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method m2_17
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (disconnect_cableWithPlugType1ma_printermaPlugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method m2_18
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (disconnect_printermaPlugType1_cableWithPlugType1mb_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+  (:method m2_19
+     :parameters ()
+     :task (ConnectDevices_pc_printer_data_)
+     :subtasks (and
+        (task0 (disconnect_cableWithPlugType1ma_pcmbPlugType1_))
+        (task1 (ConnectDevices_pc_printer_data_))
+     )
+  )
+
+  (:action x__method_precondition_vPC_to_vPC_data_pcmbPlugType1_cableWithPlugType1ma_cableWithPlugType1mb_
+     :parameters ()
+     :precondition (and 
+         (pisConnected_pcmbPlugType1_cableWithPlugType1ma_)
+     )
+  )
+
+  (:action x__method_precondition_finish_cableWithPlugType1mb_printermaPlugType1_
+     :parameters ()
+     :precondition (and 
+         (pisConnected_cableWithPlugType1mb_printermaPlugType1_)
+     )
+  )
+
+  (:action ok__
+     :parameters ()
+     :precondition (and 
+         (ppGuard__)
+     )
+     :effect (and 
+         (ppAim__)
+     )
+  )
+
+  (:action x__method_precondition_vPC_to_vPC_data_pcmbPlugType1_cableWithPlugType1mb_cableWithPlugType1ma_
+     :parameters ()
+     :precondition (and 
+         (pisConnected_pcmbPlugType1_cableWithPlugType1mb_)
+     )
+  )
+
+  (:action x__method_precondition_finish_cableWithPlugType1ma_printermaPlugType1_
+     :parameters ()
+     :precondition (and 
+         (pisConnected_cableWithPlugType1ma_printermaPlugType1_)
+     )
+  )
+
+  (:action guard__
+     :parameters ()
+     :effect (and 
+         (ppGuard__)
+         (not(mpGuard__))
+     )
+  )
+
+  (:action connect_3_cableWithPlugType1ma_pcmbPlugType1_plugType1_
+     :parameters ()
+     :precondition (and 
+         (misOccupied_pcmbPlugType1_)
+         (misOccupied_cableWithPlugType1ma_)
+         (mpGuard__)
+     )
+     :effect (and 
+         (pisConnected_cableWithPlugType1ma_pcmbPlugType1_)
+         (not(misOccupied_pcmbPlugType1_))
+         (not(misOccupied_cableWithPlugType1ma_))
+     )
+  )
+
+  (:action connect_3_cableWithPlugType1ma_printermaPlugType1_plugType1_
+     :parameters ()
+     :precondition (and 
+         (misOccupied_printermaPlugType1_)
+         (misOccupied_cableWithPlugType1ma_)
+         (mpGuard__)
+     )
+     :effect (and 
+         (pisConnected_cableWithPlugType1ma_printermaPlugType1_)
+         (not(misOccupied_printermaPlugType1_))
+         (not(misOccupied_cableWithPlugType1ma_))
+     )
+  )
+
+  (:action connect_3_cableWithPlugType1mb_pcmbPlugType1_plugType1_
+     :parameters ()
+     :precondition (and 
+         (misOccupied_pcmbPlugType1_)
+         (misOccupied_cableWithPlugType1mb_)
+         (mpGuard__)
+     )
+     :effect (and 
+         (pisConnected_cableWithPlugType1mb_pcmbPlugType1_)
+         (not(misOccupied_pcmbPlugType1_))
+         (not(misOccupied_cableWithPlugType1mb_))
+     )
+  )
+
+  (:action connect_3_cableWithPlugType1mb_printermaPlugType1_plugType1_
+     :parameters ()
+     :precondition (and 
+         (misOccupied_printermaPlugType1_)
+         (misOccupied_cableWithPlugType1mb_)
+         (mpGuard__)
+     )
+     :effect (and 
+         (pisConnected_cableWithPlugType1mb_printermaPlugType1_)
+         (not(misOccupied_printermaPlugType1_))
+         (not(misOccupied_cableWithPlugType1mb_))
+     )
+  )
+
+  (:action connect_8_pcmbPlugType1_cableWithPlugType1ma_plugType1_
+     :parameters ()
+     :precondition (and 
+         (misOccupied_cableWithPlugType1ma_)
+         (misOccupied_pcmbPlugType1_)
+         (mpGuard__)
+     )
+     :effect (and 
+         (pisConnected_pcmbPlugType1_cableWithPlugType1ma_)
+         (not(misOccupied_cableWithPlugType1ma_))
+         (not(misOccupied_pcmbPlugType1_))
+     )
+  )
+
+  (:action connect_8_pcmbPlugType1_cableWithPlugType1mb_plugType1_
+     :parameters ()
+     :precondition (and 
+         (misOccupied_cableWithPlugType1mb_)
+         (misOccupied_pcmbPlugType1_)
+         (mpGuard__)
+     )
+     :effect (and 
+         (pisConnected_pcmbPlugType1_cableWithPlugType1mb_)
+         (not(misOccupied_cableWithPlugType1mb_))
+         (not(misOccupied_pcmbPlugType1_))
+     )
+  )
+
+  (:action connect_8_printermaPlugType1_cableWithPlugType1ma_plugType1_
+     :parameters ()
+     :precondition (and 
+         (misOccupied_cableWithPlugType1ma_)
+         (misOccupied_printermaPlugType1_)
+         (mpGuard__)
+     )
+     :effect (and 
+         (pisConnected_printermaPlugType1_cableWithPlugType1ma_)
+         (not(misOccupied_cableWithPlugType1ma_))
+         (not(misOccupied_printermaPlugType1_))
+     )
+  )
+
+  (:action connect_8_printermaPlugType1_cableWithPlugType1mb_plugType1_
+     :parameters ()
+     :precondition (and 
+         (misOccupied_cableWithPlugType1mb_)
+         (misOccupied_printermaPlugType1_)
+         (mpGuard__)
+     )
+     :effect (and 
+         (pisConnected_printermaPlugType1_cableWithPlugType1mb_)
+         (not(misOccupied_cableWithPlugType1mb_))
+         (not(misOccupied_printermaPlugType1_))
+     )
+  )
+
+  (:action disconnect_pcmbPlugType1_cableWithPlugType1ma_
+     :parameters ()
+     :precondition (and 
+         (mpGuard__)
+         (pisConnected_pcmbPlugType1_cableWithPlugType1ma_)
+     )
+     :effect (and 
+         (misOccupied_cableWithPlugType1ma_)
+         (misOccupied_pcmbPlugType1_)
+         (not(pisConnected_pcmbPlugType1_cableWithPlugType1ma_))
+     )
+  )
+
+  (:action disconnect_cableWithPlugType1mb_printermaPlugType1_
+     :parameters ()
+     :precondition (and 
+         (mpGuard__)
+         (pisConnected_cableWithPlugType1mb_printermaPlugType1_)
+     )
+     :effect (and 
+         (misOccupied_printermaPlugType1_)
+         (misOccupied_cableWithPlugType1mb_)
+         (not(pisConnected_cableWithPlugType1mb_printermaPlugType1_))
+     )
+  )
+
+  (:action disconnect_pcmbPlugType1_cableWithPlugType1mb_
+     :parameters ()
+     :precondition (and 
+         (mpGuard__)
+         (pisConnected_pcmbPlugType1_cableWithPlugType1mb_)
+     )
+     :effect (and 
+         (misOccupied_cableWithPlugType1mb_)
+         (misOccupied_pcmbPlugType1_)
+         (not(pisConnected_pcmbPlugType1_cableWithPlugType1mb_))
+     )
+  )
+
+  (:action disconnect_cableWithPlugType1mb_pcmbPlugType1_
+     :parameters ()
+     :precondition (and 
+         (mpGuard__)
+         (pisConnected_cableWithPlugType1mb_pcmbPlugType1_)
+     )
+     :effect (and 
+         (misOccupied_pcmbPlugType1_)
+         (misOccupied_cableWithPlugType1mb_)
+         (not(pisConnected_cableWithPlugType1mb_pcmbPlugType1_))
+     )
+  )
+
+  (:action disconnect_printermaPlugType1_cableWithPlugType1ma_
+     :parameters ()
+     :precondition (and 
+         (mpGuard__)
+         (pisConnected_printermaPlugType1_cableWithPlugType1ma_)
+     )
+     :effect (and 
+         (misOccupied_cableWithPlugType1ma_)
+         (misOccupied_printermaPlugType1_)
+         (not(pisConnected_printermaPlugType1_cableWithPlugType1ma_))
+     )
+  )
+
+  (:action disconnect_cableWithPlugType1ma_printermaPlugType1_
+     :parameters ()
+     :precondition (and 
+         (mpGuard__)
+         (pisConnected_cableWithPlugType1ma_printermaPlugType1_)
+     )
+     :effect (and 
+         (misOccupied_printermaPlugType1_)
+         (misOccupied_cableWithPlugType1ma_)
+         (not(pisConnected_cableWithPlugType1ma_printermaPlugType1_))
+     )
+  )
+
+  (:action disconnect_printermaPlugType1_cableWithPlugType1mb_
+     :parameters ()
+     :precondition (and 
+         (mpGuard__)
+         (pisConnected_printermaPlugType1_cableWithPlugType1mb_)
+     )
+     :effect (and 
+         (misOccupied_cableWithPlugType1mb_)
+         (misOccupied_printermaPlugType1_)
+         (not(pisConnected_printermaPlugType1_cableWithPlugType1mb_))
+     )
+  )
+
+  (:action disconnect_cableWithPlugType1ma_pcmbPlugType1_
+     :parameters ()
+     :precondition (and 
+         (mpGuard__)
+         (pisConnected_cableWithPlugType1ma_pcmbPlugType1_)
+     )
+     :effect (and 
+         (misOccupied_pcmbPlugType1_)
+         (misOccupied_cableWithPlugType1ma_)
+         (not(pisConnected_cableWithPlugType1ma_pcmbPlugType1_))
+     )
+  )
+)

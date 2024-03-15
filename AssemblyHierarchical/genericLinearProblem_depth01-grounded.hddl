@@ -1,0 +1,18 @@
+(define (problem p)
+   (:domain rc)
+   (:htn :parameters ()
+      :subtasks (and
+         (x__top__)
+      )
+   )
+   (:init
+      (mpGuard__)
+      (misOccupied_printermaPlugType1_)
+      (misOccupied_pcmbPlugType1_)
+      (misOccupied_cableWithPlugType1mb_)
+      (misOccupied_cableWithPlugType1ma_)
+   )
+   (:goal (and
+      (ppAim__)
+   ))
+)
